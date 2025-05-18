@@ -17,3 +17,18 @@ def count_characters(text):
             char_count[char] += 1
     
     return char_count
+
+def sort_on(d):
+    return d["num"]
+
+
+def sort_charactercount(text):
+    list_of_char = []
+    dic_of_char = count_characters(text)
+    for char in dic_of_char: 
+        small_dic = {}
+        small_dic = {"char":char,"num":dic_of_char[char]}
+        if char.isalpha():
+            list_of_char.append(small_dic)
+    list_of_char.sort(reverse=True, key=sort_on) 
+    return list_of_char
